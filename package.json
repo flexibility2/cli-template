@@ -1,0 +1,46 @@
+{
+    "name": "cli-template",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev": "turbo run dev",
+        "build": "turbo run build",
+        "release": "turbo run release",
+        "lint": "eslint \"{packages,apps}/**/*.{js,jsx,ts,tsx}\"",
+        "typecheck": "tsc --noEmit",
+        "graph": "madge --extensions ts --ts-config tsconfig.json packages/*/src",
+        "commit": "git-cz",
+        "prepare": "husky"
+    },
+    "keywords": [],
+    "author": "flexibility2",
+    "license": "ISC",
+    "packageManager": "pnpm@10.12.1",
+    "lint-staged": {
+        "*.{md,json}": [
+            "prettier --cache --write --no-error-on-unmatched-pattern"
+        ],
+        "*.{ts,tsx}": [
+            "eslint --fix",
+            "prettier --cache --parser=typescript --write"
+        ]
+    },
+    "devDependencies": {
+        "@types/node": "22.2.0",
+        "@types/jest": "29.5.12",
+        "typescript": "5.5.4",
+        "eslint": "9.9.0",
+        "@eslint/js": "9.9.0",
+        "globals": "15.9.0",
+        "typescript-eslint": "8.1.0",
+        "@typescript-eslint/eslint-plugin": "8.1.0",
+        "eslint-plugin-simple-import-sort": "12.1.1",
+        "lint-staged": "15.2.9",
+        "prettier": "3.3.3",
+        "husky": "9.1.4",
+        "cz-git": "1.9.4",
+        "madge": "8.0.0",
+        "turbo": "2.0.12"
+    }
+}
