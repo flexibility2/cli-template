@@ -1,13 +1,7 @@
 import { program } from 'commander'
 
-export const runCLI = () => {
-    program
-        .name('simple')
-        .description('A simple CLI tool')
-        .version('0.0.1')
-        .action(() => {
-            console.log('Hello from simple CLI!')
-        })
+import './command'
 
+export const runCLI = () => {
     program.parse(process.argv)
 }
